@@ -332,6 +332,54 @@ hr {
   color: #000000;
 }
 
+.related_posts {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.related_posts h3 {
+    font-size: 22px;
+    color: #1f1f1f;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e42b2b;
+}
+
+.related_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.related_item {
+    transition: transform 0.3s ease;
+}
+
+.related_item:hover {
+    transform: translateY(-3px);
+}
+
+.related_item a {
+    display: block;
+    padding: 15px;
+    background: #ffffff;
+    color: #333333;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #f3f3f3;
+    transition: all 0.3s ease;
+}
+
+.related_item a:hover {
+    background: #f7f7f7;
+    color: #e42b2b;
+    border-color: #e42b2b;
+}
+
 .footer {
   clear: both;
   max-width: 780px;
@@ -726,3 +774,51 @@ a.back_to_top:hover span {
 }
 
 /*animation ends*/
+
+/* Mobile optimizations */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 18px; /* Increased font size for better readability */
+  }
+  .main {
+    width: 100%;
+    margin-top: 0;
+    box-shadow: none;
+  }
+  .nav_container {
+    width: 95%;
+    padding: 10px 0;
+  }
+  .header, .content {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .header {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  .post .post_title a {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  /* Increase touch target size for buttons and links */
+  a, button, .nav_container .site_nav a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Improved spacing for mobile */
+  .post {
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+  .post p {
+    line-height: 1.6;
+  }
+  .list_with_title .container {
+    width: 95%;
+  }
+}
