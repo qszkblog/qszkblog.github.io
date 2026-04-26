@@ -1,0 +1,16 @@
+{
+  "name": "秋色之空",
+  "short_name": "秋色之空",
+  "description": "精选 Windows/Android/iOS 免费绿色软件推荐与下载",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#f7f7f7",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}

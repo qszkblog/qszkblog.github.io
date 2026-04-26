@@ -53,3 +53,53 @@ $('[data-fancybox="gallery"]').fancybox({
     dblclickSlide: false
   },
 });
+
+// Lazy load images in post content
+document.querySelectorAll('.post_content.markdown img:not([loading])').forEach(function(img) {
+  img.setAttribute('loading', 'lazy');
+});
+
+// Auto-detect FAQ sections and inject FAQPage schema
+(function() {
+  var faqs = [];
+  var headings = document.querySelectorAll('.post_content.markdown strong');
+  headings.forEach(function(el) {
+    var text = el.textContent.trim();
+    if (text.match(/^Q[：:]/)) {
+      var question = text.replace(/^Q[：:]\s*/, '');
+      var answer = '';
+      var sibling = el.parentElement;
+      while (sibling && sibling.nextSibling) {
+        sibling = sibling.nextSibling;
+        if (sibling.nodeType === 3) continue;
+        if (sibling.querySelector && sibling.querySelector('strong') && sibling.querySelector('strong').textContent.match(/^Q[：:]/)) break;
+        if (sibling.textContent) answer += sibling.textContent.trim() + ' ';
+        if (sibling.tagName === 'H2' || sibling.tagName === 'H3') break;
+      }
+      answer = answer.trim();
+      if (question && answer) {
+        faqs.push({question: question, answer: answer});
+      }
+    }
+  });
+  if (faqs.length >= 2) {
+    var schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(function(f) {
+        return {
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        };
+      })
+    };
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+})();

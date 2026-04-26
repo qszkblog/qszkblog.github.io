@@ -140,7 +140,8 @@ hr {
   padding: 0 0;
 }
 
-.header .site_title_container h1 {
+.header .site_title_container h1,
+.header .site_title_container .site_name {
   line-height: 1;
   margin: 0;
 }
@@ -235,6 +236,68 @@ hr {
 .post .post_detail_title h2 {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.post .post_detail_title h1 {
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin: 0 0 6px 0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 13px;
+  color: #999;
+  margin-top: 20px;
+  padding: 8px 0;
+}
+.breadcrumb a {
+  color: #999;
+}
+.breadcrumb a:hover {
+  color: #333;
+}
+.breadcrumb-sep {
+  margin: 0 6px;
+  color: #ccc;
+}
+.breadcrumb-current {
+  color: #666;
+}
+
+/* Related posts */
+.related-posts {
+  margin-top: 30px;
+  padding: 20px 0;
+  border-top: 1px solid #f3f3f3;
+}
+.related-posts h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+.related-posts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.related-posts li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+.related-posts li a {
+  color: #555;
+}
+.related-posts li a:hover {
+  color: #e42b2b;
+}
+.related-date {
+  font-size: 12px;
+  color: #bbb;
+  margin-left: 8px;
 }
 
 .post .list p {
@@ -726,3 +789,33 @@ a.back_to_top:hover span {
 }
 
 /*animation ends*/
+
+/* Search page */
+.search-page { margin-top: 30px; }
+.search-page h1 { font-size: 1.4rem; color: #1f1f1f; margin-bottom: 20px; }
+.search-box { margin-bottom: 30px; }
+#search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+#search-input:focus { border-color: #424242; }
+.search-list { list-style: none; padding: 0; }
+.search-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.search-list li a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+.search-list li a:hover { color: #e42b2b; }
+.search-date { font-size: 12px; color: #bbb; margin-left: 10px; }
+.search-desc { font-size: 14px; color: #777; margin: 4px 0 0; }
+.search-hint { color: #999; font-size: 14px; }
