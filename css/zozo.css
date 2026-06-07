@@ -140,8 +140,8 @@ hr {
   padding: 0 0;
 }
 
-.header .site_title_container h1,
-.header .site_title_container .site_name {
+.header .site_title_container .site_title h1,
+.header .site_title_container .site_title > div {
   line-height: 1;
   margin: 0;
 }
@@ -207,7 +207,8 @@ hr {
   margin-top: 50px;
 }
 
-.post .post_title h2 {
+.post .post_title h2,
+.post .post_title h1 {
   letter-spacing: 1px;
   font-size: 1.4rem;
   line-height: 1;
@@ -233,7 +234,8 @@ hr {
   font-size: 12px;
 }
 
-.post .post_detail_title h2 {
+.post .post_detail_title h2,
+.post .post_detail_title h1 {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -447,6 +449,14 @@ hr {
   padding: 0;
 }
 
+.list_section_title {
+  font-size: 1.6rem;
+  color: #1f1f1f;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
 .list_with_title .listing_title {
   font-size: 1.4rem;
   color: #1f1f1f;
@@ -532,11 +542,11 @@ hr {
 }
 
 .markdown h2 {
-  font-size: 1.25em;
+  font-size: 1.35em;
 }
 
 .markdown h3 {
-  font-size: 1.15em;
+  font-size: 1.25em;
 }
 
 .markdown h4 {
